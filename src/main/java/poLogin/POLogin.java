@@ -10,6 +10,7 @@ import utilities.SelUtility;
 import utilities.TestBase;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 
 public class POLogin extends TestBase {
 
@@ -100,11 +101,13 @@ public class POLogin extends TestBase {
         oSelUtil.webElementSendKeys(password, properties.getProperty("sfdc.password"));
         oSelUtil.webElementClick(rememberCheckBox);
         oSelUtil.webElementClick(loginButton);
+        oSelUtil.waitExplicitly(5, userName, driver);
         String expectedTitle = properties.getProperty("sfdc.usernameTitle");
         String actualTitle = userNavBtn.getAttribute("title");
         oSelUtil.verifyText(actualTitle, expectedTitle, "HomePage");
         oSelUtil.webElementClick(accDropDown);
         oSelUtil.webElementClick(logout);
+        oSelUtil.waitExplicitly(5, userName, driver);
         String actualNameDisplayed = userName.getText();
         String expectedNameDisplay = properties.getProperty("sfdc.username");
         Assert.assertEquals(expectedNameDisplay, actualNameDisplayed);
@@ -119,6 +122,7 @@ public class POLogin extends TestBase {
         oSelUtil.webElementClick(continueButton);
         String expectedMgs = properties.getProperty("forgotPassword.errorMessage");
         String actualMessage = errorMessageTxt.getText();
+
         Assert.assertEquals(expectedMgs,actualMessage);
         oSelUtil.verifyText(expectedMgs, actualMessage, "Error message");
 //        closeBrowser(driver);

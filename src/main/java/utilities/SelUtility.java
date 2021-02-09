@@ -1,9 +1,5 @@
 package utilities;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,17 +18,10 @@ import static io.github.bonigarcia.wdm.config.DriverManagerType.CHROME;
 
 public class SelUtility extends TestBase {
 
-//    static ExtentTest extentTest =null;
-    static ExtentHtmlReporter htmlReporter;
-    static ExtentReports extentReports = null;
-    static Properties properties;
+
+    public static Properties properties;
 
     static {
-        String addDate = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        extentReports = new ExtentReports();
-        htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/resources/reports/"+addDate+".html"  );
-        extentReports.attachReporter(htmlReporter);
-//        extentTest = extentReports.createTest("dummyTest");
         try {
             properties = new Properties();
             FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+ "/resources/testdata/application.properties");
@@ -45,6 +34,7 @@ public class SelUtility extends TestBase {
 
     WebDrManager driverManagerWeb = new WebDrManager();
     Logger log = Logger.getLogger(getClass().getSimpleName());
+
 
     public Properties getProperties() {
         return properties;
@@ -67,7 +57,7 @@ public class SelUtility extends TestBase {
     }
 
     public void quitApp() {
-//        extentReports.flush();
+        extentReports.flush();
         driverManagerWeb.quitApp();
     }
 
