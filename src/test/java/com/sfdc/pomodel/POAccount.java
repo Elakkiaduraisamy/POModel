@@ -60,7 +60,7 @@ public class POAccount extends TestBase {
         oSelUtil.verifyText(titlePage.getText(),properties.getProperty("sfdc.AccTitleName"), "Account Title page");
 
     }
-    @Test
+
     public void createAnAccount() throws Exception {
         oSelUtil.waitExplicitly(5,newAccBtn , driver);
         oSelUtil.webElementClick(newAccBtn);
@@ -72,7 +72,7 @@ public class POAccount extends TestBase {
         String actualTitle = accNameTitle.getText();
         oSelUtil.verifyText(expectedTitle,actualTitle,"Account Name added ");
     }
-    @Test
+
     public void createNewviewAccount() throws Exception{
         launchAccountTab();
         oSelUtil.waitExplicitly(5, createNewView, driver);

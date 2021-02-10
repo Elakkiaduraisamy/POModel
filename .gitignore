@@ -15,6 +15,7 @@
 # Maven
 log/
 target/
+test-output/
 
 pom.xml.tag
 pom.xml.releaseBackup

@@ -5,6 +5,7 @@
         <classes>
             <class name="com.sfdc.web.Login" />
             <class name="com.sfdc.web.Account" />
+            <class name="com.sfdc.web.Contact" />
 <!--                <methods>-->
 <!--                    <include name="loginToSFDCWebAutomationPortal"/>-->
 <!--                    <include name="loginToSFDCInvalidUser"/>-->
