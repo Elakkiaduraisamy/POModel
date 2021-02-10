@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [All Test Suite]">
+  <test thread-count="5" name="/Users/venlini/Documents/Elakkia/mywork/PageObjectModelDemo/src/test/java(failed)">
+    <classes>
+      <class name="com.sfdc.web.Account">
+        <methods>
+          <include name="dependencyFulfillMent"/>
+          <include name="sfdcCreateNewViewAccount"/>
+          <include name="settingDependency"/>
+          <include name="terminateApp"/>
+        </methods>
+      </class> <!-- com.sfdc.web.Account -->
+    </classes>
+  </test> <!-- /Users/venlini/Documents/Elakkia/mywork/PageObjectModelDemo/src/test/java(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->
